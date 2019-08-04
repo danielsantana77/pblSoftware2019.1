@@ -1,0 +1,1 @@
+Pasta que inclui arquivos javascript

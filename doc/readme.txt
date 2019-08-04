@@ -1,0 +1,1 @@
+Esta pasta contém todos os documentos relacionados ao projeto: contrato, anotações de idéias, propostas, leiame com as configurações para que o sistema funcione corretamente, etc.

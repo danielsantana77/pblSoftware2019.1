@@ -1,0 +1,1 @@
+Esta pasta contém contém os .sql com a estrutura do banco de dados e também dumps de backup
