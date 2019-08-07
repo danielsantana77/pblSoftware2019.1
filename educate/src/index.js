@@ -15,8 +15,9 @@ import LoginLayout from "layouts/Login.jsx";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
+      <Route path="/login" render={props => <LoginLayout {...props} />} />
       <Route path="/admin" render={props => <AdminLayout {...props} />} />
-      <Redirect from="/" to="/admin/home" />
+      <Redirect from="/admin" to="/admin/home" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

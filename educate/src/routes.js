@@ -51,7 +51,7 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   
-  /*{
+  {
     path: "/icons",
     name: "Icons",
     icon: "pe-7s-science",

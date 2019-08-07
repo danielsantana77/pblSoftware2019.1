@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import AdminNavbarLinks from "../Navbars/AdminNavbarLinks.jsx";
 
-import logo from "assets/img/reactlogo.png";
+import logo from "assets/img/educatelogo.png";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class Sidebar extends Component {
           </a>
           <a
             href="https://www.google.com"
-            className="simple-text logo-normal"
+            className="simple-text logo-normal" style={{marginTop:'5px'}}
           >
             Educate
           </a>

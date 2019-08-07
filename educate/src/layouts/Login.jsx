@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import { Button } from "react-bootstrap";
 
 import { FormInputs } from "components/FormInputs/FormInputs.jsx";
 import Footer from "components/Footer/Footer";
 import CustomButton from "components/CustomButton/CustomButton"
+import logo from "assets/img/loginlogo.png"
+import bg from "assets/img/sidebar-2.jpg"
 
 class Login extends Component {
     constructor(props) {
@@ -17,7 +20,10 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <div className="col-md-offset-4 col-md-4" style={{ float: 'none', marginTop: '200px' }}>
+                <div className="col-md-offset-4 col-md-4" style={{ float: 'none', marginTop: '100px' }}>
+                    <div className="logo-img text-center">
+                        <img src={logo} alt="logo_image" className="col-md-12 col-sm-12 col-xs-12"/>
+                    </div>
                     <h4 className="text-center">Login</h4>
                     <FormInputs
                         ncols={[""]}
@@ -39,7 +45,7 @@ class Login extends Component {
                             }
                         ]}
                     />
-                    <CustomButton> Entrar</CustomButton>
+                    <Button href="./admin/home"> Entrar</Button>
                 </div>
                 <Footer />
             </div>
