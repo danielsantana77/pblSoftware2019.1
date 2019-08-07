@@ -1,1 +1,0 @@
-Esta pasta contém as funcionalidades principais do sistema
