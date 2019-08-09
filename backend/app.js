@@ -42,7 +42,7 @@ app.use(bodyparser.json())
 app.use(bodyparser.text())
 
 
-//Iniciar o servidor
+//Inicia a pagina inicial
 
 app.get("/", function (req, res, next){
 
@@ -94,6 +94,8 @@ app.post('/login', function(req,res){
 
  })
 
+
+// Inicia o servidor na Porta 3000 
 const PORT = 3000
 
 app.listen(PORT, function(){
