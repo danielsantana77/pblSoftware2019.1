@@ -106,7 +106,18 @@ app.post('/login', function(req,res){
 
    // res.send("Eh noiz")
 
- })
+ });
+
+ /* deletando um usuário da tabela */
+app.get('/deletar/:id',function(req,res){
+
+    Admin.destroy({where:{'id':req.params.id}}).then(function(){
+        res.send("Usuário deletado com sucesso!")
+    }).catch(function(erro){
+        res.send("Esse usuário não existe!")
+    })  
+    
+})
 
 
 // Inicia o servidor na Porta 3000 
