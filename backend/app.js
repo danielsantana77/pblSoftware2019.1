@@ -57,6 +57,19 @@ app.use((req, res) => {
     res.send("Estou bem !")
 })
 */
+
+/* admin não é o administrador em si, e sim o usuário
+listando conteudo da tabela */
+app.get('lista', function(req,res){
+    Admin.all({order: [['id','DESC']]}).then(function(admin){
+        console.log(admin)
+     res.render('lista', {admin: admin})
+
+    })
+    
+
+});
+
 app.post('/cadastrar', function(req,res,next){
     
    //Metodo do Sequelize pra criar um registro na tabela 
@@ -65,7 +78,8 @@ app.post('/cadastrar', function(req,res,next){
         password:req.body.password
     }).then(function(){
        res.redirect('/telaprofessor')
-        
+       //caso queira ver todos os cadastros do banco
+       //res.redirect('/lista')
     }).catch(function(erro){
         res.send("Erro : Usuario nao cadastrado " + erro)
     }) 
