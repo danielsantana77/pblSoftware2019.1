@@ -9,8 +9,8 @@ import "./assets/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";
 import "./assets/css/demo.css";
 import "./assets/css/pe-icon-7-stroke.css";
 
-import AdminLayout from "layouts/Admin.jsx";
-import LoginLayout from "layouts/Login.jsx";
+import AdminLayout from "./layouts/Admin.jsx";
+import LoginLayout from "./layouts/Login.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
