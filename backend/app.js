@@ -4,7 +4,8 @@ const path = require('path')
 const bodyparser = require("body-parser")
 const Sequelize = require('sequelize')
 const admin = require('./models/Admin')
-const saudacao = require('./validar')
+const { createEngine } = require('express-react-views');
+//const axios = require('axios')
 
 
 
@@ -34,7 +35,8 @@ User.create({
 
 //setup view engine
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine','ejs')
+app.set('view engine','jsx')
+app.engine('jsx',createEngine())
 
 //Parse Aplication
 app.use(bodyparser.urlencoded({extended: false}))/
@@ -48,6 +50,7 @@ app.get("/", function (req, res, next){
 
     res.render('index');
     
+    
 
 });
 
@@ -57,19 +60,6 @@ app.use((req, res) => {
     res.send("Estou bem !")
 })
 */
-
-/* admin não é o administrador em si, e sim o usuário
-listando conteudo da tabela */
-app.get('lista', function(req,res){
-    Admin.all({order: [['id','DESC']]}).then(function(admin){
-        console.log(admin)
-     res.render('lista', {admin: admin})
-
-    })
-    
-
-});
-
 app.post('/cadastrar', function(req,res,next){
     
    //Metodo do Sequelize pra criar um registro na tabela 
@@ -78,8 +68,7 @@ app.post('/cadastrar', function(req,res,next){
         password:req.body.password
     }).then(function(){
        res.redirect('/telaprofessor')
-       //caso queira ver todos os cadastros do banco
-       //res.redirect('/lista')
+        
     }).catch(function(erro){
         res.send("Erro : Usuario nao cadastrado " + erro)
     }) 
@@ -106,18 +95,7 @@ app.post('/login', function(req,res){
 
    // res.send("Eh noiz")
 
- });
-
- /* deletando um usuário da tabela */
-app.get('/deletar/:id',function(req,res){
-
-    Admin.destroy({where:{'id':req.params.id}}).then(function(){
-        res.send("Usuário deletado com sucesso!")
-    }).catch(function(erro){
-        res.send("Esse usuário não existe!")
-    })  
-    
-})
+ })
 
 
 // Inicia o servidor na Porta 3000 
