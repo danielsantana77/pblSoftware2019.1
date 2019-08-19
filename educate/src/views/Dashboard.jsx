@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import ChartistGraph from "react-chartist";
+//import ChartistGraph from "react-chartist";
 import { Grid, Row, Col, Alert, Table } from "react-bootstrap";
 
 import { Card } from "components/Card/Card.jsx";
-import { CustomButtom } from "components/CustomButton/CustomButton.jsx";
-import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { Tasks } from "components/Tasks/Tasks.jsx";
+//import { CustomButtom } from "components/CustomButton/CustomButton.jsx";
+//import { StatsCard } from "components/StatsCard/StatsCard.jsx";
+//import { Tasks } from "components/Tasks/Tasks.jsx";
 import {
   dataPie,
   legendPie,
