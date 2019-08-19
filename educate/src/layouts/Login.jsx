@@ -4,7 +4,7 @@ import axios from "axios"
 
 import { FormInputs } from "components/FormInputs/FormInputs.jsx";
 import Footer from "components/Footer/Footer";
-import CustomButton from "components/CustomButton/CustomButton"
+//import CustomButton from "components/CustomButton/CustomButton"
 import logo from "assets/img/loginlogo.png"
 
 
@@ -29,7 +29,7 @@ class Login extends Component {
 
     handleClick(event) {
         var apiBaseUrl = "http://localhost:3000/";
-        var self = this;
+        //var self = this;
         var payload = {
             "username": this.state.username,
             "password": this.state.password

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// *Never used*
 //import ChartistGraph from "react-chartist";
 import { Grid, Row, Col, Alert, Table } from "react-bootstrap";
 
@@ -7,17 +8,17 @@ import { Card } from "components/Card/Card.jsx";
 //import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 //import { Tasks } from "components/Tasks/Tasks.jsx";
 import {
-  dataPie,
-  legendPie,
-  dataSales,
-  optionsSales,
-  responsiveSales,
-  legendSales,
-  dataBar,
-  optionsBar,
-  responsiveBar,
-  legendBar,
-  iconsArray,
+  //dataPie,
+  //legendPie,
+  //dataSales,
+  //optionsSales,
+  //responsiveSales,
+  //legendSales,
+  //dataBar,
+  //optionsBar,
+  //responsiveBar,
+  //legendBar,
+  //iconsArray,
   dataDisciplines
 } from "variables/Variables.jsx";
 import CustomButton from "components/CustomButton/CustomButton";
