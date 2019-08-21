@@ -7,7 +7,8 @@ import Icons from "views/Icons.jsx";
 import Notifications from "views/Notifications.jsx";
 //import Upgrade from "views/Upgrade.jsx";
 
-const dashboardRoutes = [
+// Rotas do Dashboard
+const Routes = [
   {
     path: "/home",
     name: "Página Inicial",
@@ -50,8 +51,14 @@ const dashboardRoutes = [
     component: Notifications,
     layout: "/admin"
   },
-  
   {
+    path: "/notificacoes",
+    name: "Notificações",
+    icon: "pe-7s-bell",
+    component: Notifications,
+    layout: "/depart"
+  },
+  /*{
     path: "/icons",
     name: "Icons",
     icon: "pe-7s-science",
@@ -60,4 +67,4 @@ const dashboardRoutes = [
   }//,*/
 ];
 
-export default dashboardRoutes;
+export default Routes;
