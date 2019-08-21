@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import NotificationSystem from "react-notification-system";
 
-import AdminNavbar from "components/Navbars/AdminNavbar";
+import DepartamentoNavbar from "components/Navbars/DepartamentoNavbar";
 import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
-//import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
 import { style } from "variables/Variables.jsx";
 
@@ -13,7 +12,7 @@ import routes from "routes.js";
 
 import image from "assets/img/sidebar-3.jpg";
 
-class Admin extends Component {
+class Departamento extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,7 +57,7 @@ class Admin extends Component {
   };
   getRoutes = routes => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/admin") {
+      if (prop.layout === "/Departamento") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -160,7 +159,7 @@ class Admin extends Component {
           color={this.state.color}
           hasImage={this.state.hasImage} />
         <div id="main-panel" className="main-panel" ref="mainPanel">
-          <AdminNavbar
+          <DepartamentoNavbar
             {...this.props}
             brandText={this.getBrandText(this.props.location.pathname)}
           />
@@ -172,4 +171,4 @@ class Admin extends Component {
   }
 }
 
-export default Admin;
+export default Departamento;
