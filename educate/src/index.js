@@ -12,6 +12,7 @@ import "./assets/css/pe-icon-7-stroke.css";
 import AdminLayout from "./layouts/Admin.jsx";
 import LoginLayout from "./layouts/Login.jsx";
 import DepartLayout from "./layouts/Departamento.jsx"
+import ProfLayout from "./layouts/Professor.jsx"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route path="/login" render={props => <LoginLayout {...props} />} />
       <Route path="/admin" render={props => <AdminLayout {...props} />} />
       <Route path="/depart" render={props => <DepartLayout {...props} />} />
+      <Route path="/prof" render={props => <ProfLayout {...props} />} />
 
       <Redirect from="/" to="/login" />
     </Switch>
