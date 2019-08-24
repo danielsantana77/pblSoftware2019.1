@@ -4,7 +4,8 @@ const path = require('path')
 const bodyparser = require("body-parser")
 const Sequelize = require('sequelize')
 const admin = require('./models/Admin')
-const { createEngine } = require('express-react-views');
+const { createEngine } = require('express-react-views')
+const cors = require('cors');
 //const axios = require('axios')
 
 
@@ -43,6 +44,10 @@ app.use(bodyparser.urlencoded({extended: false}))/
 app.use(bodyparser.json())
 app.use(bodyparser.text())
 
+app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
+//*/
 
 //Inicia a pagina inicial
 
@@ -84,6 +89,9 @@ app.post('/login', function(req,res){
     const {username} = req.body 
     const {password} = req.body
 
+    console.log(username);
+
+
     admin.findOne({where: {username: username, password: password} }).then(function(){
             res.render('/telaprofessor')
 
@@ -99,7 +107,7 @@ app.post('/login', function(req,res){
 
 
 // Inicia o servidor na Porta 3000 
-const PORT = 3000
+const PORT = 4000
 
 app.listen(PORT, function(){
     console.log("Ouvindo na porta "+PORT+"....")

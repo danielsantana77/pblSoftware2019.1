@@ -1,8 +1,13 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: pbl03
+-- Host: localhost    Database: educatebd
 -- ------------------------------------------------------
 -- Server version	8.0.17
+CREATE DATABASE  IF NOT EXISTS `educatebd` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE USER 'Administrador'@'localhost' IDENTIFIED BY 'educate';
+GRANT ALL PRIVILEGES ON * . * TO 'Administrador'@'localhost';
+
+USE `educatebd`;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
