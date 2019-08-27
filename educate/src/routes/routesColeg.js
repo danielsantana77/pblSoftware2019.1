@@ -51,13 +51,6 @@ const Routes = [
     component: Notifications,
     layout: "/admin"
   },
-  {
-    path: "/notificacoes",
-    name: "Notificações",
-    icon: "pe-7s-bell",
-    component: Notifications,
-    layout: "/depart"
-  },
   /*{
     path: "/icons",
     name: "Icons",

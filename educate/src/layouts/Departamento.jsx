@@ -7,9 +7,7 @@ import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
 
 import { style } from "variables/Variables.jsx";
-
 import routes from "routes/routesDepart.js";
-
 import image from "assets/img/sidebar-3.jpg";
 
 class Departamento extends Component {
