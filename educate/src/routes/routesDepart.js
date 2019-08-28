@@ -5,6 +5,7 @@ import Typography from "views/Typography.jsx";
 //import Icons from "views/Icons.jsx";
 //import Maps from "views/Maps.jsx";
 import Notifications from "views/Notifications.jsx";
+import CadastrarDisciplina from "views/CadastrarDisciplina";
 //import Upgrade from "views/Upgrade.jsx";
 
 // Rotas do Dashboard
@@ -27,7 +28,7 @@ const Routes = [
     path: "/cadastrarDisciplinas",
     name: "Cadastrar Disciplinas",
     icon: "pe-7s-note2",
-    component: Typography,
+    component: CadastrarDisciplina,
     layout: "/depart"
   },
   {

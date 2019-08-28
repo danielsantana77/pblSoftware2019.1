@@ -58,7 +58,8 @@ class Recsenha extends Component {
                                 placeholder: "Email",
                                 onChange: (event) => this.setState({ email: event.target.value })
                             }]} />                   
-                    <Button onClick={(event) => this.handleClick(event)}> Enviar</Button>
+                    <p><Button onClick={(event) => this.handleClick(event)}> Enviar</Button></p> 
+                    <p><Button onClick={(event) => this.handleClick(event)}> Voltar</Button></p>
                 </div>
                 <Footer />
             </div>

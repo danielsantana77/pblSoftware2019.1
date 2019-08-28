@@ -156,14 +156,17 @@ class Admin extends Component {
     return (
       <div className="wrapper">
         <NotificationSystem ref="notificationSystem" style={style} />
+        
         <Sidebar {...this.props} routes={routes} image={this.state.image}
           color={this.state.color}
           hasImage={this.state.hasImage} />
         <div id="main-panel" className="main-panel" ref="mainPanel">
+
           <AdminNavbar
             {...this.props}
             brandText={this.getBrandText(this.props.location.pathname)}
           />
+
           <Switch>{this.getRoutes(routes)}</Switch>
           <Footer />
         </div>
