@@ -1,11 +1,12 @@
 import Dashboard from "views/Dashboard.jsx";
 import UserProfile from "views/UserProfile.jsx";
 //import TableList from "views/TableList.jsx";
-import Typography from "views/Typography.jsx";
+//import Typography from "views/Typography.jsx";
 //import Icons from "views/Icons.jsx";
 //import Maps from "views/Maps.jsx";
 import Notifications from "views/Notifications.jsx";
 import CadastrarDisciplina from "views/CadastrarDisciplina";
+import CadAreaConhecimento from "views/CadAreaConhecimento";
 //import Upgrade from "views/Upgrade.jsx";
 
 // Rotas do Dashboard
@@ -35,7 +36,7 @@ const Routes = [
     path: "/cadastrarArea",
     name: "Área de Conhecimento",
     icon: "pe-7s-notebook",
-    component: Typography,
+    component: CadAreaConhecimento,
     layout: "/depart"
   },
   {
