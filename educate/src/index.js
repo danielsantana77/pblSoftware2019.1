@@ -14,6 +14,7 @@ import LoginLayout from "./layouts/Login.jsx";
 import DepartLayout from "./layouts/Departamento.jsx"
 import ProfLayout from "./layouts/Professor.jsx"
 import RecLayout from "./layouts/Recuperarsenha.jsx"
+import PadraoLayout from "./layouts/LayoutsPadrao.jsx"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Route path="/depart" render={props => <DepartLayout {...props} />} />
       <Route path="/prof" render={props => <ProfLayout {...props} />} />
       <Route path="/rec" render={props => <RecLayout {...props} />} />
+      <Route path="/padrao" render={props => <PadraoLayout {...props} />} />
 
       <Redirect from="/" to="/login" />
     </Switch>
