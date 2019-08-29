@@ -7,6 +7,7 @@ import UserProfile from "views/UserProfile.jsx";
 import Notifications from "views/Notifications.jsx";
 import CadastrarDisciplina from "views/CadastrarDisciplina";
 import CadAreaConhecimento from "views/CadAreaConhecimento";
+import ManusearProfessor from "views/ManusearProfessor";
 //import Upgrade from "views/Upgrade.jsx";
 
 // Rotas do Dashboard
@@ -43,7 +44,7 @@ const Routes = [
     path: "/manusearProfessor",
     name: "Manusear Professor",
     icon: "pe-7s-users",
-    component: Notifications,
+    component: ManusearProfessor,
     layout: "/depart"
   },
   {

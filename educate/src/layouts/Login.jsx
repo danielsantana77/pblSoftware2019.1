@@ -87,7 +87,7 @@ class Login extends Component {
                     />
                     <Button onClick={(event) => this.handleClick(event)}> Entrar</Button>
                     
-                    <Button onClick={(event) => this.handleClick(event)}> Esqueceu sua senha?</Button>
+                    <Button onClick={(event) => this.handleClick(event)}  > Esqueceu sua senha?</Button>
                 </div>
                 <Footer />
             </div>
