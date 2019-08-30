@@ -17,7 +17,6 @@ sequelize.authenticate().then(function(){
 });
 
 module.exports = {
-    Sequelize: Sequelize,
     sequelize: sequelize
 }
 
@@ -43,7 +42,9 @@ sequelize.sync().then(function () {
     Admin.findAll().then(function(admin) {
       console.log(admin)
   });
+
 });
+
 // Sincroniza o model com o mysql , criando uma tabela no BD
 //Admin.sync({force: true})
 module.exports = Admin
