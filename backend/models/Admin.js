@@ -6,10 +6,8 @@ const Admin = db.sequelize.define('admins',{
     },
     password: {
         type: db.Sequelize.STRING
-    } 
-     
+    }      
 })
-
 // Sincroniza o model com o mysql , criando uma tabela no BD
 //Admin.sync({force: true})
 

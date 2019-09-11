@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Node Authentication</title>
+	<title>Profile</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<style>
@@ -15,6 +15,7 @@
 	<div class="page-header text-center">
 		<h1><span class="fa fa-anchor"></span> Profile Page</h1>
 		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+		<a href="/listar" class="btn btn-default"> Listar Usuario</a>
 	</div>
 
 	<div class="row">
@@ -25,9 +26,16 @@
 				<h3><span class="fa fa-user"></span> Local</h3>
 
 					<p>
-						<strong>id</strong>: <%= user.id %><br>
-						<strong>username</strong>: <%= user.username %><br>
-						<strong>password</strong>: <%= user.password %>
+					
+							<% for(var i = 0; i < user.id; i++) { %>
+								<tr>
+										<strong>id</strong>: <%= user.id %><br>
+										<strong>username</strong>: <%= user.username %><br>
+										<strong>password</strong>: <%= user.password %>
+								</tr>
+							<% } %>
+						
+				
 					</p>
 
 			</div>

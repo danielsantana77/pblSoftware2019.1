@@ -69,6 +69,14 @@ module.exports = function(app, passport) {
 		req.logout();
 		res.redirect('/');
 	});
+
+	// =====================================
+	// LISTAR ==============================
+	// =====================================
+	app.get('/listar', isLoggedIn,function(req, res) {		
+		res.send("<html><body><h1>Em Manutenção</h1></body></html>")
+	});
+
 };
 
 // route middleware to make sure
