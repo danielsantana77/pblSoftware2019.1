@@ -1,37 +1,65 @@
 const express = require("express")
-const app = express.Router()
-const cors = require('cors')
-const jwt = require("jsonwebtoken")
-const bcrypt = require('bcrypt')
+const app = express();
+const path = require('path')
+const bodyparser = require("body-parser")
+const { createEngine } = require('express-react-views')
+const cors = require('cors');
+const mysql      = require('mysql');
 
-const User = require('./models/Admin')
+const connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'Administrador',
+    password : 'educate',
+    database : 'educatebd'
+  });
+
+//setup view engine
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'jsx')
+app.engine('jsx', createEngine())
+
+//Parse Aplication
+app.use(bodyparser.urlencoded({ extended: false })) /
+    app.use(bodyparser.json())
+app.use(bodyparser.text())
 
 app.use(cors({
     origin: 'http://localhost:3000'
 }));
-process.env.SECRET_KEY = 'secret'
 
-app.post('/login', (req, res) => {
-    User.findOne({
-        where: {
-            email: req.body.email
+app.post('/login', function(req,res){   
+    //Atribui os valores do body que sao enviados em formatos json
+    const {username} = req.body 
+    const {password} = req.body
+
+    console.log(username);
+    console.log(password);
+    
+    if (username && password) {
+        connection.connect();
+        connection.query('SELECT * FROM usuarios WHERE usuario = ? AND senha = ?',
+            [username, password], function (error, results, fields) {
+                if (results.length > 0) {                   
+                    //req.session.username = username;
+                    console.log("Conectado!");
+                    results.sendStatus(200);
+                } else {
+                    console.log('Incorrect Username and/or Password!');
+                    results.sendStatus(204);
+                }			
+                res.end();
+            })
+        } else {
+            console.log('Please enter Username and Password!');
+            res.sendStatus();
+            res.end();
         }
+        connection.end();
     })
-    .then(user => {
-        if(user){
-            if(bcrypt.compareSync(req.body.password, user.password)) {
-                let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
-                    expiresIn: 1440
-                })
-                res.send(token)
-            }else{
-                res.status(400).json({error: 'Usuário não existe'})
-            }
-        }
-    })
-    .catch(err => {
-        res.status(400).json({ error: err })
-    })
+
+// Inicia o servidor na Porta 3000 
+const PORT = 4000
+
+app.listen(PORT, function () {
+    console.log("Ouvindo na porta " + PORT + "....")
 })
-
-module.exports = app

@@ -1,4 +1,4 @@
-const db = require('./db')
+/*const db = require('./db')
 //Criando a tabela              //Nome da Tabela  
 const Admin = db.sequelize.define('admins',{
     username:{
@@ -11,14 +11,15 @@ const Admin = db.sequelize.define('admins',{
 // Sincroniza o model com o mysql , criando uma tabela no BD
 //Admin.sync({force: true})
 
-module.exports = Admin
+module.exports = Admin*/
 
-/*
+
+
 const Sequelize = require("sequelize")
-const db = require("../database/db")
+const db = require('./db')
 
 module.exports = db.sequelize.define(
-    'user',
+    'usuarios',
     {
         id: {
             type: Sequelize.INTEGER,
@@ -31,12 +32,15 @@ module.exports = db.sequelize.define(
         password: {
             type: Sequelize.STRING
         },
-        created: {
+        name: {
+            type: Sequelize.STRING
+        },  
+        /*created: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW
-        }
-    },
+        }*/
+    }/*,
     {
         timestamps: false
-    }
-)*/
+    }*/
+)

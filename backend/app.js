@@ -46,6 +46,7 @@ app.use(cors({
 app.get("/", function (req, res, next) {
 
     res.render('index');
+    /*console.log('index');*/
 
 });
 
@@ -54,8 +55,7 @@ app.use((req, res) => {
     res.send("Estou bem !")
 })
 */
-app.post('/login', function (req, res, next) {
-
+/*app.post('/login', function (req, res, next) {
     //Metodo do Sequelize pra criar um registro na tabela 
     admin.create({
         username: req.body.username,
@@ -65,10 +65,8 @@ app.post('/login', function (req, res, next) {
 
     }).catch(function (erro) {
         res.send("Erro : Usuario nao cadastrado " + erro)
-    })
-
-    //res.send("Nome: " +req.body.nome +"<br>Email : " +req.body.email  )
-})
+    })    
+})*/
 
 app.post('/login', function(req,res){   
     //Atribui os valores do body que sao enviados em formatos json
@@ -80,6 +78,7 @@ app.post('/login', function(req,res){
     
     admin.findOne({where: {username: username, password: password} }).then(function(){
             res.render('/admin')// Ainda Não Autenticou!!!!
+            console.log("Achou")
 
     }).catch(function(erro){
             console.log("Usuario Nao cadastrado!!!!!!!!!!!!!!")            
