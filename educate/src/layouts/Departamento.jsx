@@ -130,7 +130,7 @@ class Departamento extends Component {
             {...this.props}
             brandText={this.getBrandText(this.props.location.pathname)}
           />
-          
+
           <Switch>{this.getRoutes(routes)}</Switch>
           <Footer />
         </div>

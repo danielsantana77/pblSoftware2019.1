@@ -13,7 +13,7 @@ class Recsenha extends Component {
             _notificationSystem: null,
             color: "black",
             fixedClasses: "dropdown show-dropdown open",
-            email: ''        
+            email: ''
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -21,14 +21,14 @@ class Recsenha extends Component {
         var apiBaseUrl = "http://localhost:4000/";
         //var self = this;
         var payload = {
-            "email": this.state.email,            
+            "email": this.state.email,
         }
         axios.post(apiBaseUrl + 'Recuperar Senha', payload)
             .then(function (response) {
                 console.log(response);
                 if (response.data.code === 200) {
                     console.log("Código de verificação enviado");
-                }               
+                }
                 else {
                     console.log("Email não cadastrado");
                     alert("Email não cadastrado");
@@ -57,8 +57,8 @@ class Recsenha extends Component {
                                 bsClass: "form-control",
                                 placeholder: "Email",
                                 onChange: (event) => this.setState({ email: event.target.value })
-                            }]} />                   
-                    <p><Button onClick={(event) => this.handleClick(event)}> Enviar</Button></p> 
+                            }]} />
+                    <p><Button onClick={(event) => this.handleClick(event)}> Enviar</Button></p>
                     <p><Button onClick={(event) => this.handleClick(event)}> Voltar</Button></p>
                 </div>
                 <Footer />

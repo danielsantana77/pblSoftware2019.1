@@ -68,24 +68,24 @@ app.use((req, res) => {
     })    
 })*/
 
-app.post('/login', function(req,res){   
+app.post('/login', function (req, res) {
     //Atribui os valores do body que sao enviados em formatos json
-    const {username} = req.body 
-    const {password} = req.body
+    const { username } = req.body
+    const { password } = req.body
 
     console.log(username);
     console.log(password);
-    
-    admin.findOne({where: {username: username, password: password} }).then(function(){
-            res.render('/admin')// Ainda Não Autenticou!!!!
-            console.log("Achou")
 
-    }).catch(function(erro){
-            console.log("Usuario Nao cadastrado!!!!!!!!!!!!!!")            
-    })     
+    admin.findOne({ where: { username: username, password: password } }).then(function () {
+        res.render('/admin')// Ainda Não Autenticou!!!!
+        console.log("Achou")
 
-   // res.send("Eh noiz")
- })
+    }).catch(function (erro) {
+        console.log("Usuario Nao cadastrado!!!!!!!!!!!!!!")
+    })
+
+    // res.send("Eh noiz")
+})
 
 // Inicia o servidor na Porta 3000 
 const PORT = 4000
@@ -93,35 +93,3 @@ const PORT = 4000
 app.listen(PORT, function () {
     console.log("Ouvindo na porta " + PORT + "....")
 })
-
-
-///Query que mostra na tela o conteudo da tabela
-/*const express = require('express');
-const bodyParser = require('body-parser');
-const mysql      = require('mysql');
-
-
-const connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'Administrador',
-    password : 'educate',
-    database : 'educatebd'
-  });
-
-// Initialize the app
-const app = express();
-
-app.get('/posts', function (req, res) {
-    connection.connect();
-
-    connection.query('SELECT * FROM usuario ', function (error, results, fields) {
-      if (error) throw error;
-      res.send(results)      
-    });
-    connection.end();
-});
-// Start the server
-app.listen(3000, () => {
- console.log('Go to http://localhost:3000/posts to see posts');
-});
- */

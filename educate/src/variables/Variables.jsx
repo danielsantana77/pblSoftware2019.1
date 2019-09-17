@@ -521,11 +521,11 @@ var dataSales = {
 };
 
 const dataDisciplines = [
-    "EXA840 - Introdução ao Hackeamento",
-    "EXA171 - Hackeamento de Juíz Federal",
-    "EXA605 - Engenharia da Gambiarra",
-    "TEC105 - Como passar fio"
-  ];
+  "EXA840 - Introdução ao Hackeamento",
+  "EXA171 - Hackeamento de Juíz Federal",
+  "EXA605 - Engenharia da Gambiarra",
+  "TEC105 - Como passar fio"
+];
 
 var optionsSales = {
   low: 0,
@@ -548,7 +548,7 @@ var responsiveSales = [
     "screen and (max-width: 640px)",
     {
       axisX: {
-        labelInterpolationFnc: function(value) {
+        labelInterpolationFnc: function (value) {
           return value[0];
         }
       }
@@ -594,7 +594,7 @@ var responsiveBar = [
     {
       seriesBarDistance: 5,
       axisX: {
-        labelInterpolationFnc: function(value) {
+        labelInterpolationFnc: function (value) {
           return value[0];
         }
       }

@@ -28,13 +28,13 @@ module.exports = db.sequelize.define(
         },
         username: {
             type: Sequelize.STRING
-        },        
+        },
         password: {
             type: Sequelize.STRING
         },
         name: {
             type: Sequelize.STRING
-        },  
+        },
         /*created: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW

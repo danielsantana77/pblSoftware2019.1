@@ -29,7 +29,7 @@ const Routes = [
     icon: "pe-7s-note2",
     component: Typography,
     layout: "/prof"
-  },  
+  },
   {
     path: "/visualizarCalendario",
     name: "Calendário Académico",

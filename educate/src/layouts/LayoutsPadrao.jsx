@@ -156,7 +156,7 @@ class Padrao extends Component {
     return (
       <div className="wrapper">
         <NotificationSystem ref="notificationSystem" style={style} />
-        
+
         <Sidebar {...this.props} routes={routes} image={this.state.image}
           color={this.state.color}
           hasImage={this.state.hasImage} />
