@@ -456,6 +456,7 @@ CREATE TABLE `usuario` (
   `Usuario` varchar(20) NOT NULL,
   `Senha` varchar(20) NOT NULL,
   `nome` varchar(40) NOT NULL,
+  `Função` varchar(40) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Usuario` (`Usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -467,7 +468,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'joao123','password123','João Silva'),(2,'luana123','password123','Luana Silva'),(3,'carlos123','password123','Carlos Silva'),(4,'larissa123','password123','Larissa Silva');
+INSERT INTO `usuario` VALUES (1,'joao123','password123','João Silva','Administrador'),(2,'luana123','password123','Luana Silva','Professora'),(3,'carlos123','password123','Carlos Silva','Colegiado'),(4,'larissa123','password123','Larissa Silva','Departamento');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

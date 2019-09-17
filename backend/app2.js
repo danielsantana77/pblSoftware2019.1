@@ -41,11 +41,13 @@ app.post('/login', function (req, res) {
             [username, password], function (error, results, fields) {
                 if (results.length > 0) {
                     //req.session.username = username;
-                    console.log("Conectado!");
-                    results.sendStatus(200);//Não envia
+                    console.log(username + " Conectado!");
+                    status = '200';
+                    res.sendStatus(status);
                 } else {
                     console.log('Incorrect Username and/or Password!');
-                    results.sendStatus(204);//Não envia
+                    status = '204';
+                    res.sendStatus(status);                    
                 }
                 res.end();
             })
@@ -60,7 +62,7 @@ app.post('/login', function (req, res) {
 
 
 // Inicia o servidor na Porta 3000 
-const PORT = 4000
+const PORT = 4000// se botar 3000 ele buga
 
 app.listen(PORT, function () {
     console.log("Ouvindo na porta " + PORT + "....")

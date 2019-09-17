@@ -37,20 +37,22 @@ class Login extends Component {
         axios.post(apiBaseUrl + 'login', payload)
             .then(function (response) {
                 console.log(response);
-                if (response.data.code === 200) {
-                    console.log("Login successfull");
+                if (response.status === 200) {
+                    //console.log("Login successfull");
+                    alert("Conectado")
+                    axios.render("/admin");//Nops não funfa
                 }
-                else if (response.data.code === 204) {
-                    console.log("Senha incorreta");
-                    alert("Senha incorreta")
+                else if (response.status === 204) {//response.data.code não estava indo
+                    //console.log("Senha incorreta");
+                    alert("Senha e/ou usuario incorreto")
                 }
                 else {
-                    console.log("Usuário não cadastrado");
-                    alert("Usuário não cadastrado");
+                    //console.log("Usuário não cadastrado");
+                    alert("Error");
                 }
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
                 alert("Desconectado");
             });
     }//*/
